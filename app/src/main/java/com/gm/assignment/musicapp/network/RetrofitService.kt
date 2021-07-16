@@ -9,16 +9,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class RetrofitService {
-
-
-
     companion object {
         fun getRetrofitInstance(): Retrofit {
-            val interceptor : HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+            val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
                 this.level = HttpLoggingInterceptor.Level.BODY
             }
 
-            val client : OkHttpClient = OkHttpClient.Builder().apply {
+            val client: OkHttpClient = OkHttpClient.Builder().apply {
                 this.addInterceptor(interceptor)
             }.build()
 

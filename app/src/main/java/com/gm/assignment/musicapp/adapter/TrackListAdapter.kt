@@ -1,18 +1,12 @@
 package com.gm.assignment.musicapp.adapter
 
 import android.app.Activity
-import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.gm.assignment.musicapp.Track
 import com.gm.assignment.musicapp.databinding.ArtistInfoRowLayoutBinding
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
+
 
 class TrackListAdapter(var context: Activity) :
     RecyclerView.Adapter<TrackListAdapter.ViewHolder>() {
@@ -48,8 +42,5 @@ class TrackListAdapter(var context: Activity) :
 
     inner class ViewHolder(val binding: ArtistInfoRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
     }
-
-
 }

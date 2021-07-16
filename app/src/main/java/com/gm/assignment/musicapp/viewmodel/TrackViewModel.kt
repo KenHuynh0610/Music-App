@@ -1,6 +1,5 @@
 package com.gm.assignment.musicapp.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gm.assignment.musicapp.TrackListResult
@@ -21,7 +20,6 @@ class TrackViewModel : ViewModel() {
     }
 
     fun makeApiCall(artistNameInput: String) {
-        Log.d("viewModel", "makeApiCall: $artistNameInput")
         val retrofitInstance = RetrofitService.getRetrofitInstance().create(GetApi::class.java)
         retrofitInstance.getTracks(artistNameInput).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe(getTrackListResultWithRxJava())
@@ -36,19 +34,16 @@ class TrackViewModel : ViewModel() {
 
             override fun onNext(t: TrackListResult) {
                 trackListLiveData.postValue(t)
-                Log.d("getTrackListResult", "onNext: $t")
             }
 
             override fun onError(e: Throwable) {
                 trackListLiveData.postValue(null)
-                Log.d("getTrackListResult", "onError: ")
             }
 
             override fun onComplete() {
                 //hide progress bar
                 isLoading.value = false
             }
-
         }
     }
 }
