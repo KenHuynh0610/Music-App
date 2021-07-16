@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_padding">16dp</dimen>
+    <dimen name="artist_image_width">100dp</dimen>
+    <dimen name="artist_image_height">100dp</dimen>
+    <dimen name="artist_text_size">16dp</dimen>
+    <dimen name="artist_row_layout_padding">10dp</dimen>
+</resources>
